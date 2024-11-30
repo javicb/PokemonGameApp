@@ -16,7 +16,11 @@
       />
     </div>
     <div class="flex w-full">
-      <PokemonOptions class="md:ml-[30rem] ml-36 flex-shrink-0" />
+      <PokemonOptions
+        :options="options"
+        @select-option="onSelectOption"
+        class="md:ml-[30rem] ml-36 flex-shrink-0"
+      />
     </div>
   </section>
 </template>
@@ -27,5 +31,9 @@ import PokemonOptions from '../components/PokemonOptions.vue'
 import { usePokemonGame } from '../composables/usePokemonGame'
 import { GameStatus } from '../interfaces'
 
-const { randomPokemon, isLoading, gameStatus } = usePokemonGame()
+const { randomPokemon, isLoading, gameStatus, pokemonOptions: options } = usePokemonGame()
+
+const onSelectOption = (id: number) => {
+  console.log(id)
+}
 </script>
