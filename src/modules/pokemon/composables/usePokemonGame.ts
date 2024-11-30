@@ -17,7 +17,7 @@ export const usePokemonGame = () => {
 
     const pokemonArray = response.data.results.map((pokemon) => {
       return {
-        id: pokemon.url.split('/').at(-2) || '0',
+        id: +(pokemon.url.split('/').at(-2) || '0'),
         name: pokemon.name,
       }
     })

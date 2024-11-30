@@ -1,15 +1,27 @@
 <template>
   <section>
     <h1 class="block md:hidden">¿Cuál es este Pokemon?</h1>
-    <img
-      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-      alt="Pokemon"
-      class="brightness-0 h-[400px]"
-    />
+    <img v-if="!showPokemon" :src="pokemonImage" alt="Pokemon" class="brightness-0 h-[400px]" />
+    <img v-else :src="pokemonImage" alt="Pokemon" class="fade-in h-[400px]" />
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+
+interface Props {
+  pokemonId: number
+  showPokemon?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  showPokemon: false,
+})
+
+const pokemonImage = computed(() => {
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.pokemonId}.png`
+})
+</script>
 
 <style scoped>
 @font-face {
