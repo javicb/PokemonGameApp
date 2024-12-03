@@ -21,7 +21,12 @@
       <h3 class="text-center text-xl font-bold">{{ gameStatus }}</h3>
     </div>
     <div>
-      <PokemonOptions :options="options" @select-option="checkAnswer" />
+      <PokemonOptions
+        :options="options"
+        :block-selection="gameStatus !== GameStatus.Playing"
+        :correct-answer="randomPokemon.id"
+        @select-option="checkAnswer"
+      />
     </div>
   </section>
 </template>
