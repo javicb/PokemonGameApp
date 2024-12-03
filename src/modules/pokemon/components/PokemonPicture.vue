@@ -1,8 +1,13 @@
 <template>
   <section>
-    <h1 class="block md:hidden">¿Cuál es este Pokemon?</h1>
-    <img v-if="!showPokemon" :src="pokemonImage" alt="Pokemon" class="brightness-0 h-[400px]" />
-    <img v-else :src="pokemonImage" alt="Pokemon" class="fade-in h-[400px]" />
+    <h1>¿Cuál es este Pokemon?</h1>
+    <img
+      v-if="!showPokemon"
+      :src="pokemonImage"
+      alt="Pokemon"
+      class="brightness-0 h-[300px] sm:h-[400px]"
+    />
+    <img v-else :src="pokemonImage" alt="Pokemon" class="fade-in h-[300px] sm:h-[400px]" />
   </section>
 </template>
 
@@ -37,7 +42,7 @@ h1 {
     -2px -2px 0 #ffcb05,
     2px -2px 0 #ffcb05,
     -2px 2px 0 #ffcb05;
-  @apply text-blue-500 text-3xl m-5 z-10;
+  @apply text-blue-500 text-2xl m-5 z-10 sm:text-3xl md:text-4xl;
 }
 img {
   user-select: none;

@@ -9,7 +9,7 @@
 
   <section
     v-else
-    class="absolute flex flex-col items-center justify-center space-y-4 lg:top-[50%] lg:left-[25%] lg:translate-x-[-25%] lg:translate-y-[-50%]"
+    class="relative flex flex-col items-center justify-center space-y-4 h-screen overflow-y-auto lg:absolute lg:top-[50%] lg:left-[25%] lg:translate-x-[-25%] lg:translate-y-[-50%]"
   >
     <div>
       <PokemonPicture
@@ -65,7 +65,7 @@ h3 {
     -2px -2px 0 #ffcb05,
     2px -2px 0 #ffcb05,
     -2px 2px 0 #ffcb05;
-  @apply text-blue-500 text-5xl m-5 z-10;
+  @apply text-blue-500 text-2xl m-5 z-10 sm:text-3xl md:text-4xl;
 }
 
 button {
