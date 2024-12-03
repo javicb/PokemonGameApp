@@ -32,7 +32,7 @@
       <button
         v-if="gameStatus !== GameStatus.Playing"
         @click="getNextRound(4)"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
       >
         Jugar de nuevo
       </button>
@@ -58,7 +58,7 @@ const {
 
 <style scoped>
 h3 {
-  font-family: 'Pokemon Solid';
+  /* font-family: 'Pokemon Solid'; */
   color: white;
   text-shadow:
     2px 2px 0 #ffcb05,
@@ -69,7 +69,7 @@ h3 {
 }
 
 button {
-  font-family: 'Pokemon Hollow';
+  /* font-family: 'Pokemon Hollow'; */
   color: white;
   text-shadow:
     2px 2px 0 #3b5da8,

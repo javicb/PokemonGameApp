@@ -42,7 +42,7 @@ defineEmits<{
 }
 
 button {
-  font-family: 'Pokemon Hollow';
+  /* font-family: 'Pokemon Hollow'; */
   letter-spacing: 0.05em;
   text-shadow:
     2px 2px 0 #3b5da8,
@@ -51,11 +51,14 @@ button {
     -2px 2px 0 #3b5da8;
   @apply bg-[#df1c18] text-yellow-200 shadow-md rounded-lg p-3 m-2 cursor-pointer w-40 text-center transition-all hover:bg-[#f34c3c];
   font-size: 0.875rem; /* Base size for small screens */
+  margin: 4px;
   @screen sm {
     font-size: 1rem; /* Slightly larger for small screens (≥640px) */
+    margin: 8px;
   }
   @screen md {
     font-size: 1.25rem; /* Default size for medium screens (≥768px) */
+    margin: 10px;
   }
 }
 
