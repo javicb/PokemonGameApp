@@ -7,20 +7,21 @@
     <h3 class="animate-pulse">Cargando Pokemons</h3>
   </section>
 
-  <section v-else class="relative flex flex-col justify-center items-center w-screen h-screen">
-    <div class="flex w-full">
+  <section
+    v-else
+    class="absolute flex flex-col items-center justify-center space-y-4 lg:top-[50%] lg:left-[25%] lg:translate-x-[-25%] lg:translate-y-[-50%]"
+  >
+    <div>
       <PokemonPicture
         :pokemon-id="randomPokemon.id"
         :show-pokemon="gameStatus !== GameStatus.Playing"
-        class="md:ml-[22rem] ml-10 flex-shrink-0"
       />
     </div>
-    <div class="flex w-full">
-      <PokemonOptions
-        :options="options"
-        @select-option="onSelectOption"
-        class="md:ml-[30rem] ml-36 flex-shrink-0"
-      />
+    <div>
+      <h3 class="text-center text-xl font-bold">{{ gameStatus }}</h3>
+    </div>
+    <div>
+      <PokemonOptions :options="options" @select-option="checkAnswer" />
     </div>
   </section>
 </template>
@@ -31,9 +32,24 @@ import PokemonOptions from '../components/PokemonOptions.vue'
 import { usePokemonGame } from '../composables/usePokemonGame'
 import { GameStatus } from '../interfaces'
 
-const { randomPokemon, isLoading, gameStatus, pokemonOptions: options } = usePokemonGame()
-
-const onSelectOption = (id: number) => {
-  console.log(id)
-}
+const {
+  randomPokemon,
+  isLoading,
+  gameStatus,
+  pokemonOptions: options,
+  checkAnswer,
+} = usePokemonGame()
 </script>
+
+<style scoped>
+h3 {
+  font-family: 'Pokemon Solid';
+  color: white;
+  text-shadow:
+    2px 2px 0 #ffcb05,
+    -2px -2px 0 #ffcb05,
+    2px -2px 0 #ffcb05,
+    -2px 2px 0 #ffcb05;
+  @apply text-blue-500 text-3xl m-5 z-10;
+}
+</style>

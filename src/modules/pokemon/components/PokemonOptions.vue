@@ -1,8 +1,10 @@
 <template>
   <section class="flex flex-col mt-5">
-    <button v-for="{ name, id } in options" :key="id" @click="$emit('selectOption', id)">
-      {{ capitalize(name) }}
-    </button>
+    <div class="grid grid-cols-2 gap-4">
+      <button v-for="{ name, id } in options" :key="id" @click="$emit('selectOption', id)">
+        {{ capitalize(name) }}
+      </button>
+    </div>
   </section>
 </template>
 

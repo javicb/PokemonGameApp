@@ -31,6 +31,14 @@ export const usePokemonGame = () => {
     pokemons.value = pokemons.value.slice(howMany)
   }
 
+  const checkAnswer = (id: number) => {
+    if (id === randomPokemon.value.id) {
+      gameStatus.value = GameStatus.Win
+    } else {
+      gameStatus.value = GameStatus.Lose
+    }
+  }
+
   onMounted(async () => {
     pokemons.value = await getPokemons()
     getNextOptions()
@@ -42,5 +50,6 @@ export const usePokemonGame = () => {
     pokemonOptions,
     randomPokemon,
     getNextOptions,
+    checkAnswer,
   }
 }
