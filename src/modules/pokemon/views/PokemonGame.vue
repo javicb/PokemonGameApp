@@ -28,6 +28,15 @@
         @select-option="checkAnswer"
       />
     </div>
+    <div>
+      <button
+        v-if="gameStatus !== GameStatus.Playing"
+        @click="getNextRound(4)"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Jugar de nuevo
+      </button>
+    </div>
   </section>
 </template>
 
@@ -43,6 +52,7 @@ const {
   gameStatus,
   pokemonOptions: options,
   checkAnswer,
+  getNextRound,
 } = usePokemonGame()
 </script>
 
@@ -55,6 +65,17 @@ h3 {
     -2px -2px 0 #ffcb05,
     2px -2px 0 #ffcb05,
     -2px 2px 0 #ffcb05;
-  @apply text-blue-500 text-3xl m-5 z-10;
+  @apply text-blue-500 text-5xl m-5 z-10;
+}
+
+button {
+  font-family: 'Pokemon Hollow';
+  color: white;
+  text-shadow:
+    2px 2px 0 #3b5da8,
+    -2px -2px 0 #3b5da8,
+    2px -2px 0 #3b5da8,
+    -2px 2px 0 #3b5da8;
+  @apply bg-[#df1c18] text-yellow-200 shadow-md rounded-lg p-3 m-2 cursor-pointer w-40 text-center transition-all hover:bg-[#f34c3c];
 }
 </style>

@@ -49,7 +49,7 @@ export const usePokemonGame = () => {
     isLoading,
     pokemonOptions,
     randomPokemon,
-    getNextOptions: getNextRound,
+    getNextRound,
     checkAnswer,
   }
 }
