@@ -1,6 +1,11 @@
 # PokemonGameApp
 
-This template should help get you started developing with Vue 3 in Vite.
+This application made in Vue simulates the game of guessing which Pokemon appears in the image.
+
+![image](https://github.com/user-attachments/assets/caa6a5aa-938b-49b7-9fb6-ec1ea664c11e)
+
+![image](https://github.com/user-attachments/assets/9859f113-44c7-4616-acf9-c6fa7e27a112)
+
 
 ## Recommended IDE Setup
 
